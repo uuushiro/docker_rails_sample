@@ -44,10 +44,4 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
-
-.env.dev.sample
 .idea/
-Dockerfile
-docker-compose.yml
-script/
-template/
