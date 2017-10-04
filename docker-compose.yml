@@ -17,6 +17,8 @@ services:
       - db
     tty: true
     stdin_open: true
+    networks:
+      - rails
   spring:
     <<: *app_base
     command: ["bundle", "exec", "spring", "server"]
@@ -30,7 +32,9 @@ services:
     volumes_from:
       - data
     ports:
-      - "5432:5432"
+      - "13306:3306"
+    networks:
+      - rails
   data:
     image: "busybox"
     volumes:
@@ -42,3 +46,7 @@ volumes:
     driver: local
   bundle:
     driver: local
+
+networks:
+  rails:
+    driver: bridge

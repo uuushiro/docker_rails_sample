@@ -2,4 +2,4 @@
 
 cp .env.dev.sample .env.dev
 docker-compose build
-docker-compose up
+docker-compose up -d
